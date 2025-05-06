@@ -1,7 +1,21 @@
 [project]
-name = "python-template"
+name = "trading-bot"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
-requires-python = ">=3.11"
-dependencies = []
+authors = [
+    {name = "Zulferich",email = "zulferich55@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ccxt (>=4.4.78,<5.0.0)",
+    "pandas (>=2.2.3,<3.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "trading_bot", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
