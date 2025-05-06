@@ -1,6 +1,7 @@
 
 run = "poetry run python main.py"
 hidden = ["venv", ".config", "**/__pycache__", "**/.mypy_cache", "**/*.pyc"]
+modules = ["python-3.11"]
 
 [nix]
 channel = "stable-24_05"
