@@ -1,14 +1,35 @@
-entrypoint = "main.py"
-modules = ["python-3.11"]
+
+run = "poetry run python main.py"
+hidden = ["venv", ".config", "**/__pycache__", "**/.mypy_cache", "**/*.pyc"]
 
 [nix]
 channel = "stable-24_05"
 
-[unitTest]
-language = "python3"
+[tool]
+language = "python"
 
-[gitHubImport]
-requiredFiles = [".replit", "replit.nix"]
+[packager]
+language = "python"
+
+[packager.features]
+enabledForHosting = false
+packageSearch = true
+guessImports = true
+
+[env]
+POETRY_CACHE_DIR = "${HOME}/${REPL_SLUG}/.cache/pypoetry"
+
+[languages]
+
+[languages.python]
+pattern = "**/*.py"
+
+[languages.python.languageServer]
+start = "pylsp"
 
 [deployment]
-run = ["poetry run", "main.py"]
+run = ["poetry", "run", "python", "main.py"]
+deploymentTarget = "cloudrun"
+
+[workflows]
+runButton = "Run"
