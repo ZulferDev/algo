@@ -35,3 +35,12 @@ deploymentTarget = "cloudrun"
 
 [workflows]
 runButton = "Run"
+
+[[workflows.workflow]]
+name = "Run"
+author = 42343368
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "poetry run python main.py"
