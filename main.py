@@ -1,5 +1,4 @@
-
-from src.core.exchange import OKXExchange
+from core.fetcher import okx
 from src.strategy.ema_rsi import EMARSIStrategy
 from src.utils.risk import RiskManager
 

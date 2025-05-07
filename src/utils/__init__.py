@@ -1,2 +1,1 @@
-
-from .risk import RiskManager
+from .risk import calc_size
